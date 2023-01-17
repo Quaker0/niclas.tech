@@ -1,39 +1,61 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from "vue";
 
+const props = defineProps<{
+  header: string;
+  text: string;
+  active?: boolean;
+  writingDone?: () => void;
+  links?: string[][];
+  tags?: string[];
+}>();
 
-const props = defineProps<{ header: string, text: string, active?: boolean, writingDone?: () => void, links?: string[][], tags?: string[] }>()
-
-const timer = ref(0)
-const counter = ref(0)
+const timer = ref();
+const counter = ref(0);
 
 onMounted(() => {
   timer.value = setInterval(() => {
     if (props.active) {
-      counter.value++
+      counter.value++;
     }
     if (counter.value === props.text.length) {
       counter.value++;
-      props.writingDone?.()
+      props.writingDone?.();
     }
-  }, 75)
-})
+  }, 75);
+});
 onBeforeUnmount(() => {
   clearInterval(timer.value);
-})
+});
 </script>
 
 <template>
   <div>
     <h2 v-if="active || counter > 0" class="fade-in">{{ header }}</h2>
-    <p :class="['write-text', counter > text.length && 'blinking', active && 'active']">{{ text.slice(0, counter) }}</p>
-    <ul class="fade-in" v-if="counter > props.text.length" style="display: flex; justify-content: center;">
-      <li v-for="tag in tags" style="padding-right: 2rem;" class="tag">
+    <p
+      :class="[
+        'write-text',
+        counter > text.length && 'blinking',
+        active && 'active',
+      ]"
+    >
+      {{ text.slice(0, counter) }}
+    </p>
+    <ul
+      class="fade-in"
+      v-if="counter > props.text.length"
+      style="display: flex; justify-content: center"
+    >
+      <li v-for="tag in tags" style="padding-right: 2rem" class="tag">
         <strong>{{ tag }}</strong>
       </li>
     </ul>
-    <ul class="fade-in" v-if="counter > props.text.length" style="display: flex; justify-content: center;">
-      <li v-for="[title, link] in links" style="padding-right: 2rem;">
+    <ul
+      class="fade-in"
+      v-if="counter > props.text.length"
+      style="display: flex; justify-content: center"
+    >
+      <li v-for="[title, link] in links" style="padding-right: 2rem">
         <a :href="link" target="_blank">{{ title }}</a>
       </li>
     </ul>
@@ -85,7 +107,7 @@ li.tag:before {
 }
 
 .write-text.active::after {
-  content: '';
+  content: "";
   width: 3px;
   height: 15px;
   background: white;
