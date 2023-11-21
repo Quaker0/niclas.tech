@@ -32,29 +32,19 @@ onBeforeUnmount(() => {
 <template>
   <div>
     <h2 v-if="active || counter > 0" class="fade-in">{{ header }}</h2>
-    <p
-      :class="[
-        'write-text',
-        counter > text.length && 'blinking',
-        active && 'active',
-      ]"
-    >
+    <p :class="[
+      'write-text',
+      counter > text.length && 'blinking',
+      active && 'active',
+    ]">
       {{ text.slice(0, counter) }}
     </p>
-    <ul
-      class="fade-in"
-      v-if="counter > props.text.length"
-      style="display: flex; justify-content: center"
-    >
+    <ul class="fade-in" v-if="counter > props.text.length" style="display: flex; justify-content: center">
       <li v-for="tag in tags" style="padding-right: 2rem" class="tag">
         <strong>{{ tag }}</strong>
       </li>
     </ul>
-    <ul
-      class="fade-in"
-      v-if="counter > props.text.length"
-      style="display: flex; justify-content: center"
-    >
+    <ul class="fade-in" v-if="counter > props.text.length" style="display: flex; justify-content: center">
       <li v-for="[title, link] in links" style="padding-right: 2rem">
         <a :href="link" target="_blank">{{ title }}</a>
       </li>
@@ -63,10 +53,6 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-.write-text {
-  color: white;
-}
-
 li.tag {
   display: block;
 }
