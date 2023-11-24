@@ -9,5 +9,6 @@ npm run serve
 
 ### Deploy to S3
 ```sh
-npm run  deploy
+npm run build
+npm run deploy
 ```
