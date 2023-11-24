@@ -13,13 +13,20 @@ const props = defineProps<{
 const timer = ref();
 const counter = ref(0);
 
+const scrollTo = ref();
+function scroll() {
+  scrollTo.value?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+}
+
 onMounted(() => {
   timer.value = setInterval(() => {
     if (props.active) {
       counter.value++;
+      scroll();
     }
     if (counter.value === props.text.length) {
       counter.value++;
+      scroll();
       props.writingDone?.();
     }
   }, 75);
@@ -39,27 +46,25 @@ onBeforeUnmount(() => {
     ]">
       {{ text.slice(0, counter) }}
     </p>
-    <ul class="fade-in" v-if="counter > props.text.length" style="display: flex; justify-content: center">
-      <li v-for="tag in tags" style="padding-right: 2rem" class="tag">
+    <div class="fade-in" v-if="counter > props.text.length"
+      style="display: flex; flex-wrap: wrap; justify-content: center">
+      <div v-for="tag in tags" style="margin: 0 1rem 0.25rem .5rem" class="tag">
         <strong>{{ tag }}</strong>
-      </li>
-    </ul>
+      </div>
+    </div>
     <ul class="fade-in" v-if="counter > props.text.length" style="display: flex; justify-content: center">
       <li v-for="[title, link] in links" style="padding-right: 2rem">
         <a :href="link" target="_blank">{{ title }}</a>
       </li>
     </ul>
   </div>
+  <div ref="scrollTo"></div>
 </template>
 
 <style scoped>
-li.tag {
-  display: block;
-}
-
-li.tag:before {
+.tag:before {
   content: "+";
-  margin-right: 4px;
+  margin-right: 3px;
   margin-left: -1rem;
   font-weight: bold;
 }

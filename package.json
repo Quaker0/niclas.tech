@@ -3,24 +3,34 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "dev": "vite",
+    "serve": "vite",
     "build": "vue-tsc && vite build",
+<<<<<<< Updated upstream
     "preview": "vite preview",
     "deploy": "aws s3 sync --exclude \".*\" dist/ s3://niclas.tech --acl public-read --cache-control max-age=3600",
     "invalidate-cache": "aws cloudfront create-invalidation --distribution-id E2M7XPIQQZ78UE --paths /"
+=======
+    "deploy": "aws s3 sync --exclude \".*\" dist/ s3://niclas.tech --acl public-read --cache-control max-age=3600"
+>>>>>>> Stashed changes
   },
   "dependencies": {
-    "vue": "^3.2.45"
+    "vue": "^3.3.8"
   },
   "devDependencies": {
-    "@aws-solutions-constructs/aws-cloudfront-s3": "^2.30.0",
-    "@types/node": "^18.11.18",
-    "@vitejs/plugin-vue": "^4.0.0",
-    "aws-cdk-lib": "^2.60.0",
-    "constructs": "^10.1.217",
+    "@aws-solutions-constructs/aws-cloudfront-s3": "^2.46.0",
+    "@types/node": "^20.10.0",
+    "@vitejs/plugin-vue": "^4.5.0",
+    "aws-cdk-lib": "^2.110.1",
+    "constructs": "^10.3.0",
     "ts-node": "^10.9.1",
+<<<<<<< Updated upstream
     "typescript": "^4.9.3",
     "vite": "^4.0.0",
     "vue-tsc": "^1.0.11"
+=======
+    "typescript": "^5.3.2",
+    "vite": "^5.0.2",
+    "vue-tsc": "^1.8.22"
+>>>>>>> Stashed changes
   }
 }
