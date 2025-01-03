@@ -7,7 +7,8 @@
     ],
     "projects": [
         {"title": "This website", "link": "https://github.com/Quaker0/niclas.tech", "description": "A simple project playing around with Vue.", "technologies": ["Vue", "Vite", "Typescript"]},
-        {"title": "STHLM LUNCH", "link": "https://sthlmlunch.se", "description": "A website for reviewing lunch places in Stockholm. Most work has been put on simplifying reviewing, such as fetching metadata from Google and from the picture that is emailed in. It's a public website with an admin interface behind a login. It's 19 lambdas for parsing stats, reviews and pictures as well as replying to the app via API Gateway.", "technologies": ["React", "Material UI", "Webpack", "Javascript", "AWS"]},
-        {"title": "Paycheck", "link": "https://github.com/Quaker0/paycheck", "description": "A macOS app to categorise and graph what you spend your salary on.", "technologies": ["Electron", "React", "Typescript"]}
+        {"title": "STHLM LUNCH", "link": "https://sthlmlunch.se", "description": "A website for reviewing lunch places in Stockholm. Most work has been put on the admin page for simplifying the reviewing process, such as fetching metadata from Google and from the picture that is emailed in. It's 19 lambdas for parsing stats, reviews and pictures as well as replying to the app via API Gateway.", "technologies": ["React", "Material UI", "Webpack", "Javascript", "AWS"]},
+        {"title": "Paycheck", "link": "https://github.com/Quaker0/paycheck", "description": "A macOS app to categorise and graph what you spend your salary on.", "technologies": ["Electron", "React", "Typescript"]},
+        {"title": "Dodo", "link": "https://github.com/Quaker0/dodo", "description": "A website for todo items, where you can drag and drop them to create hierarchies. FYI: Backend has been disabled.", "technologies": ["Typescript", "AWS CDK", "React", "Socket.IO"]}
     ]
 }
