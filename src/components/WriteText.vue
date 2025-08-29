@@ -15,7 +15,7 @@ const counter = ref(0);
 
 const scrollTo = ref();
 function scroll() {
-  scrollTo.value?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  scrollTo.value?.scrollIntoView({ block: "center", behavior: "smooth" });
 }
 
 onMounted(() => {
@@ -29,7 +29,7 @@ onMounted(() => {
       scroll();
       props.writingDone?.();
     }
-  }, 75);
+  }, 40);
 });
 onBeforeUnmount(() => {
   clearInterval(timer.value);
@@ -39,20 +39,33 @@ onBeforeUnmount(() => {
 <template>
   <div>
     <h2 v-if="active || counter > 0" class="fade-in">{{ header }}</h2>
-    <p :class="[
-      'write-text',
-      counter > text.length && 'blinking',
-      active && 'active',
-    ]">
+    <p
+      :class="[
+        'write-text',
+        counter > text.length && 'blinking',
+        active && 'active',
+      ]"
+    >
       {{ text.slice(0, counter) }}
     </p>
-    <div class="fade-in" v-if="counter > props.text.length"
-      style="display: flex; flex-wrap: wrap; justify-content: center">
-      <div v-for="tag in tags" style="margin: 0 1rem 0.25rem .5rem" class="tag">
+    <div
+      class="fade-in"
+      v-if="counter > props.text.length"
+      style="display: flex; flex-wrap: wrap; justify-content: center"
+    >
+      <div
+        v-for="tag in tags"
+        style="margin: 0 1rem 0.25rem 0.5rem"
+        class="tag"
+      >
         <strong>{{ tag }}</strong>
       </div>
     </div>
-    <ul class="fade-in" v-if="counter > props.text.length" style="display: flex; justify-content: center">
+    <ul
+      class="fade-in"
+      v-if="counter > props.text.length"
+      style="display: flex; justify-content: center"
+    >
       <li v-for="[title, link] in links" style="padding-right: 2rem">
         <a :href="link" target="_blank">{{ title }}</a>
       </li>

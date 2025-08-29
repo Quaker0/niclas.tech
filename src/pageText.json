@@ -1,14 +1,58 @@
 {
-    "background": "My name is Niclas, I am a full-stack developer, and these are some of my projects.",
-    "contact": "Look me up on LinkedIn or Github.",
-    "links": [
-        ["LinkedIn", "https://www.linkedin.com/in/niclasbman/"],
-        ["Github", "https://github.com/Quaker0"]
-    ],
-    "projects": [
-        {"title": "This website", "link": "https://github.com/Quaker0/niclas.tech", "description": "A simple project playing around with Vue.", "technologies": ["Vue", "Vite", "Typescript"]},
-        {"title": "STHLM LUNCH", "link": "https://sthlmlunch.se", "description": "A website for reviewing lunch places in Stockholm. Most work has been put on the admin page for simplifying the reviewing process, such as fetching metadata from Google and from the picture that is emailed in. It's 19 lambdas for parsing stats, reviews and pictures as well as replying to the app via API Gateway.", "technologies": ["React", "Material UI", "Webpack", "Javascript", "AWS"]},
-        {"title": "Paycheck", "link": "https://github.com/Quaker0/paycheck", "description": "A macOS app to categorise and graph what you spend your salary on.", "technologies": ["Electron", "React", "Typescript"]},
-        {"title": "Dodo", "link": "https://github.com/Quaker0/dodo", "description": "A website for todo items, where you can drag and drop them to create hierarchies. FYI: Backend has been disabled.", "technologies": ["Typescript", "AWS CDK", "React", "Socket.IO"]}
-    ]
+  "background": "My name is Niclas, I am a full-stack developer, and these are some of my projects.",
+  "contact": "Look me up on LinkedIn or Github.",
+  "links": [
+    ["LinkedIn", "https://www.linkedin.com/in/niclasbman/"],
+    ["Github", "https://github.com/Quaker0"]
+  ],
+  "projects": [
+    {
+      "title": "niclas.tech",
+      "links": [["Project", "https://github.com/Quaker0/niclas.tech"]],
+      "description": "A simple project playing around with Vue.",
+      "technologies": ["Vue", "Vite", "Typescript"]
+    },
+    {
+      "title": "STHLM LUNCH",
+      "links": [["Website", "https://sthlmlunch.se"]],
+      "description": "A website for reviewing lunch places in Stockholm. Most work has been put on the admin page for simplifying the reviewing process, such as fetching metadata from Google and from the picture that is emailed in. It's 19 lambdas for parsing stats, reviews and pictures as well as replying to the app via API Gateway. The code is unfortunately not public.",
+      "technologies": ["React", "Material UI", "Webpack", "Javascript", "AWS"]
+    },
+    {
+      "title": "Paycheck",
+      "links": [["Project", "https://github.com/Quaker0/paycheck"]],
+      "description": "A macOS app to categorise and graph what you spend your salary on.",
+      "technologies": ["Electron", "React", "Typescript"]
+    },
+    {
+      "title": "Dodo",
+      "links": [["Project", "https://github.com/Quaker0/dodo"]],
+      "description": "A website for todo items, where you can drag and drop them to create hierarchies. FYI: Backend has been disabled.",
+      "technologies": ["Typescript", "AWS CDK", "React", "Socket.IO"]
+    },
+    {
+      "title": "Gift Getter",
+      "links": [
+        ["Project", "https://github.com/Quaker0/gift-getter"],
+        ["Website", "https://gift-getter.com"]
+      ],
+      "description": "A gift recommendation website I built.",
+      "technologies": ["Typescript", "React", "Vite", "Affiliate", "SEO"]
+    },
+    {
+      "title": "Svala",
+      "links": [
+        ["Project", "https://github.com/Quaker0/svala-app"],
+        ["Website", "https://svalaconsulting.com"]
+      ],
+      "description": "The website for my consulting business, Svala Consulting.",
+      "technologies": ["Typescript", "React", "Next.js", "SEO"]
+    },
+    {
+      "title": "CV Generator",
+      "links": [["Project", "https://github.com/Quaker0/cv-generator"]],
+      "description": "A local LLM for generating excerpts from your cv/cover letter and highlight certain aspects depending on the job description.",
+      "technologies": ["Llama3", "LangChain", "Vector database"]
+    }
+  ]
 }
